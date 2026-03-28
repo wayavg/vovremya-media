@@ -1,0 +1,124 @@
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/mixins' as *;
+@use '../../base/typography' as *;
+
+.header-articles {
+    background-image: url(/src/images/articles/bg/header.svg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    padding-top: $space-96;
+    padding-bottom: $space-64;
+    margin-bottom: $space-32;
+
+    @include media-down('desktop-lg') {
+        padding-top: $space-80;
+    }
+
+    @include media-down('desktop-sm') {
+        padding-top: $space-64;
+    }
+
+    @include media-down('mobile') {
+        padding-bottom: $space-8;
+        padding-bottom: $space-48;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: $space-24;
+    }
+
+    &__navigation {
+        display: flex;
+        flex-direction: column;
+        gap: $space-16;
+    }
+
+    &__ul {
+        display: flex;
+        flex-direction: column;
+        gap: $space-4;
+    }
+
+    &__a {
+        font-family: $font-title;
+        font-size: 28px;
+        color: $color-blue-500-main;
+
+        @include media-down('mobile') {
+            font-size: 24px;
+        }
+
+        &:hover {
+            &::after {
+                content: ' ->';
+            }
+        }
+    }
+}
+
+.base-article, .main-article, .pro-article {
+
+    margin-bottom: 80px;
+
+    h2, p {
+        background-color: $color-blue-000;
+        border: 2px solid $color-blue-500-main;
+        padding: 2.5rem;
+
+        @include media-down('mobile') {
+            padding: 1rem;
+        }
+    }
+
+    &__frst-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 24px;
+
+        @include media-down('desktop-sm') {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+    }
+
+    &__descr {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        gap: 24px;
+        grid-area: 1 / 2 / 2 / 3;
+    }
+
+    &__inf {
+        height: 100%;
+        font-size: $fs-large-desk;
+    }
+
+    &__scnd-row {
+        margin-top: 24px;
+        display: flex;
+        gap: $space-24;
+        @include media-down('desktop-sm') {
+            gap: $space-16;
+        }
+
+        @include media-down('mobile') {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.main-article {
+    &__descr {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .article-card-large {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+}

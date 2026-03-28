@@ -1,0 +1,77 @@
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/mixins' as *;
+
+.secondary-button, .primary-button {
+
+    appearance: none;       // Отключает системные стили браузера
+    background: transparent; // Убирает серый фон
+    border: none;            // Убирает рамку
+    padding: 0;             // Убирает внутренние отступы
+    margin: 0;              // Убирает внешние отступы
+    
+    // 2. Настраиваем шрифт
+    font: inherit;          // Наследует шрифт от родителя (иначе будет системный)
+    color: inherit;         // Наследует цвет текста
+    
+    // 3. Важные мелочи
+    cursor: pointer;        // Добавляет "палец" при наведении
+    outline: none;          // Убирает синюю обводку (но лучше заменить на свою для доступности)
+    
+    // 4. Для корректного отображения флексов/размеров
+    display: inline-flex;   
+    align-items: center;
+    justify-content: center;
+    
+    font-family: $font-title;
+    font-size: 24px;
+    text-transform: lowercase;
+    outline: none;
+
+    display: inline-block;
+    height: 48px;
+    padding-inline: $space-32;
+    align-content: center;
+
+    @include media-down('desktop-sm') {
+        font-size: 20px;
+        height: 40px;
+        padding-inline: $space-24;
+    }
+
+    @include media-down('mobile') {
+        font-size: 18px;
+        height: 48px;
+    }
+}
+
+.primary-button { 
+    background-color: $color-blue-500-main;
+    color: $color-blue-000;
+    transition: color $transition-main;
+    transition: background-color $transition-main;
+
+    &:hover {
+        background-color: $color-blue-200-main;
+        color: $color-blue-900-main;
+    }
+
+    &:active {
+        background-color: $color-blue-900-main;
+        color: $color-blue-000;
+    }
+}
+
+.secondary-button {
+    background-color: $color-blue-200-main;
+    transition: color $transition-main;
+    transition: background-color $transition-main;
+
+    &:hover {
+        background-color: $color-blue-500-main;
+        color: $color-blue-000;
+    }
+
+    &:active {
+        background-color: $color-blue-900-main;
+    }
+}

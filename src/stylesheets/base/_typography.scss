@@ -1,0 +1,136 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/fonts' as *;
+
+body {
+  font-family: $font-body;
+  font-size: 18px;
+  line-height: $lh-body;
+  color: $color-blue-900-main;
+
+  @include media-down('tablet') {
+    font-size: 16px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-title;
+  text-transform: lowercase;
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+h1 {
+    font-size: $fs-h1-desk;
+
+    @include media-down("desktop-sm") {
+        font-size: $fs-h1-tab;
+    }
+
+    @include media-down("mobile") {
+        font-size: $fs-h1-mob;
+    }
+}
+
+h2 {
+    font-size: $fs-h2-desk;
+
+    @include media-down("desktop-sm") {
+        font-size: $fs-h2-tab;
+    }
+
+    @include media-down("mobile") {
+        font-size: $fs-h2-mob;
+    }
+}
+
+h3 {
+    font-size: $fs-h3-desk;
+
+    @include media-down("desktop-sm") {
+        font-size: $fs-h3-tab;
+    }
+
+    @include media-down("mobile") {
+        font-size: $fs-h3-mob;
+    }
+}
+
+h4 {
+    font-size: $fs-h4-desk;
+
+    @include media-down("desktop-sm") {
+        font-size: $fs-h4-tab;
+    }
+
+    @include media-down("mobile") {
+        font-size: $fs-h4-mob;
+    }
+}
+
+h5 {
+    font-size: $fs-h5-desk;
+
+    @include media-down("desktop-sm") {
+        font-size: $fs-h5-tab;
+    }
+
+    @include media-down("mobile") {
+        font-size: $fs-h5-mob;
+    }
+}
+
+h6 {
+    font-size: $fs-h6-desk;
+
+    @include media-down("desktop-sm") {
+        font-size: $fs-h6-tab;
+    }
+
+    @include media-down("mobile") {
+        font-size: $fs-h6-mob;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $color-blue-900-main;
+
+    &:hover {
+        color: $color-blue-700;
+    }
+}
+
+.paragraph {
+    font-size: $fs-large-desk;
+    line-height: $lh-article;
+
+    @include media-down('desktop-sm') {
+        font-size: $fs-large-tab;
+    }
+
+    @include media-down('mobile') {
+        font-size: $fs-large-mob;
+    }
+}
+
+.large-text {
+    font-size: $fs-large-desk;
+
+    @include media-down('desktop-sm') {
+        font-size: $fs-large-tab;
+    }
+
+    @include media-down('mobile') {
+        font-size: $fs-large-mob;
+    }
+}
+
+.quote-card__text {
+    font-family: $font-body;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: condensed;
+    font-size: $fs-large-desk;
+    line-height: $lh-article;
+}

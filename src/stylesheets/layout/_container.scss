@@ -1,0 +1,27 @@
+@use '../abstracts/mixins' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 1416px;
+  margin-inline: auto;
+
+  @include media-down("desktop-lg") {
+    max-width: 1040px;
+  }
+
+  @include media-down("desktop-sm") {
+    max-width: 848px;
+  }
+
+  @include media-down("tablet") {
+    max-width: 704px;
+  }
+
+  @include media-down("mobile") {
+    width: 100%;
+    padding-inline: 16px;
+  }
+}

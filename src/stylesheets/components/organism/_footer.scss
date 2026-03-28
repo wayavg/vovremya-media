@@ -1,0 +1,207 @@
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/mixins' as *;
+@use '../../base/typography' as *;
+
+.footer {
+    &__top-bg {
+        width: 100%;
+        height: 100px;
+        background-color: $color-milk-100;
+        background-image: url('/src/images/footer/bg.svg');
+        background-repeat:repeat-x ;
+        background-position: bottom;
+        background-size: contain;
+    }
+    background-color: $color-blue-200-main;
+
+    &__container {
+        padding-block: $space-64;
+        display: flex;
+        flex-direction: column;
+        gap: $space-32;
+    }
+
+    &__main-content {
+        display: flex;
+        justify-content: space-between;
+
+        @include media-down('mobile') {
+            flex-direction: column;
+            gap: $space-32;
+        }
+    }
+
+    .footer-img {
+        display: contents;
+        img {
+            width: 70%;
+            height: auto;
+        }
+
+        @include media-down('mobile') {
+            display: block;
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        gap: $space-64;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: $space-16;
+
+        a {
+            @extend h4;
+
+            &:hover {
+                color: $color-blue-500-main;
+
+                &::before {
+                    content: '--> '
+                }
+                &::after {
+                    content: ' -->'
+                }
+            }
+        }
+    }
+
+    .footer-social {
+        display: flex;
+        gap: $space-16;
+
+        a {
+            height: 48px;
+        }
+
+        @include media-down('mobile') {
+            gap: $space-16;
+        }
+    }
+
+    &__secondary-content {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(2, auto);
+        grid-column-gap: 24px;
+        grid-row-gap: 48px;
+
+        @include media-down('desktop-sm') {
+            grid-template-rows: repeat(3, auto);
+            grid-column-gap: 16px;
+            grid-row-gap: 40px;
+        }
+
+        @include media-down('tablet') {
+            grid-template-columns: repeat(9, 1fr);
+            grid-template-rows: repeat(3, auto);
+            grid-row-gap: 32px;
+        }
+
+        @include media-down('mobile') {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__logo { 
+        grid-area: 1 / 1 / 2 / 4; 
+
+        @include media-down('desktop-sm') {
+            grid-area: 1 / 1 / 2 / 7;
+        }
+
+        @include media-down('tablet') {
+            grid-area: 1 / 1 / 2 / 5;
+        }
+    }
+    &__study-descr { 
+        grid-area: 2 / 1 / 3 / 5; 
+
+        @include media-down('desktop-sm') {
+            grid-area: 2 / 1 / 3 / 5;
+        }
+
+        @include media-down('tablet') {
+            grid-area: 2 / 1 / 3 / 5;
+        }
+    }
+    &__font-descr { 
+        grid-area: 2 / 6 / 3 / 10; 
+
+        @include media-down('desktop-sm') {
+            grid-area: 2 / 8 / 3 / 13;
+        }
+
+        @include media-down('tablet') {
+            grid-area: 2 / 6 / 3 / 10;
+        }
+    }
+    &__students { 
+        grid-area: 1 / 6 / 2 / 8; 
+    
+        @include media-down('desktop-sm') {
+            grid-area: 1 / 8 / 2 / 11;
+        }
+
+        @include media-down('tablet') {
+            grid-area: 1 / 6 / 2 / 8;
+        }
+    }
+    &__mentors { 
+        grid-area: 1 / 8 / 2 / 10; 
+    
+        @include media-down('desktop-sm') {
+            grid-area: 1 / 11 / 2 / 13;
+        }
+
+        @include media-down('tablet') {
+            grid-area: 1 / 8 / 2 / 10;
+        }
+    }
+    &__agree { 
+        grid-area: 1 / 10 / 2 / 13; 
+    
+        @include media-down('desktop-sm') {
+            grid-area: 3 / 8 / 4 / 13;
+        }
+
+        @include media-down('tablet') {
+            grid-area: 3 / 6 / 4 / 10;
+        }
+    }
+
+    .footer-people {
+        display: flex;
+        flex-direction: column;
+        gap: $space-16;
+
+        .title {
+            @extend h6 ;
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: $space-4;
+    }
+
+    &__logo {
+        display: flex;
+        gap: $space-32;
+
+        @include media-down('mobile') {
+            img {
+                width: 100%;
+            }
+            gap: $space-24;
+        }
+    }
+}

@@ -1,0 +1,137 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../components/atoms/tags';
+@use '../components/moleculs/breadcrumbs';
+
+.header-article {
+
+    background-image: url(/src/images/articles/bg/header.svg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    padding-top: $space-96;
+    padding-bottom: $space-32;
+    margin-bottom: $space-32;
+
+    @include media-down('desktop-lg') {
+        padding-top: $space-80;
+    }
+
+    @include media-down('desktop-sm') {
+        padding-top: $space-64;
+    }
+
+    @include media-down('mobile') {
+        padding-bottom: $space-8;
+    }
+
+
+    &__container{
+        display: flex;
+        flex-direction: column;
+        gap: $space-64;
+        margin-bottom: $space-64;
+
+        @include media-down('mobile') {
+            gap: $space-32;
+        }
+    }
+
+    &__main {
+        display: flex;
+        justify-content: space-between;
+        gap: $space-24;
+
+        @include media-down('mobile') {
+            flex-direction: column;
+            gap: $space-8;
+        }
+    }
+
+    &__content {
+        width: 1050px;
+        display: flex;
+        flex-direction: column;
+        gap: $space-16;
+
+        @include media-down('mobile') {
+            width: 100%;
+        }
+    }
+
+    &__meta {
+        display: flex;
+        color: $color-blue-400;
+        font-size: 16px;
+        gap: $space-64;
+
+        a {
+            color: $color-blue-400;
+        }
+
+        @include media-down('tablet') {
+            font-size: 0.875rem;
+            gap: $space-40;
+        }
+
+        @include media-down('mobile') {
+            flex-wrap: wrap;
+            justify-content: space-between;
+            row-gap: $space-8;
+
+            .header-article__topics {
+                order: 2;
+            }
+
+            .read-time {
+                order: 3;
+            }
+        }
+        
+
+
+        .read-time {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: $space-4;
+        }
+
+        .icon-clock {
+            color: $color-blue-400;
+            width: 22px;
+            height: 22px;
+
+            * {
+                stroke: currentColor; 
+                fill: none;           
+            }
+        }
+    }
+
+    &__img {
+        width: 100%;
+        overflow: hidden;
+
+        img {
+        width: 100%;
+        height: auto;
+        display: block;
+        }
+    }
+
+    &__social {
+        display: flex;
+        flex-direction: column;
+        gap: $space-8;
+
+        a {
+            display: block;
+            height: 48px;
+        }
+
+        @include media-down('mobile') {
+            flex-direction: row;
+        }
+    }
+}

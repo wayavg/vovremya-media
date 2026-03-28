@@ -1,0 +1,32 @@
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/mixins' as *;
+
+.breadcrumbs {
+    display: flex;
+    gap: $space-8;
+    a {
+        color: $color-blue-400;
+        text-decoration: none;
+
+        &:visited, &:active {
+            color: $color-blue-400;
+        }
+
+        &:hover {
+            color: $color-blue-700
+        }
+    }
+
+    span {
+        color: $color-blue-400;
+    }
+
+    span:last-child {
+        color: $color-blue-400;
+    }
+
+    @include media-down('mobile') {
+        flex-wrap: wrap;
+        row-gap: $space-4;
+    }
+}

@@ -1,0 +1,29 @@
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/mixins' as *;
+@use '../../base/typography' as *;
+
+.meta-tag-a {
+    color: $color-blue-400;
+
+    &::before {
+        font-family: $font-title;
+        content: '[:';
+    }
+    &::after {
+        font-family: $font-title;
+        content: ':]';
+    }
+
+    &:hover {
+        color: $color-blue-700;
+
+        &::before {
+            content: '(:';
+        }
+
+        &::after {
+            content: ':)'
+        }
+    }
+}
+

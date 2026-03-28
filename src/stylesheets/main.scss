@@ -1,0 +1,33 @@
+// 1. Сначала настройки (Abstracts) - они нужны всем остальным
+@use 'abstracts/variables' as *;
+// @use 'abstracts/mixins' as *;
+
+// 2. Базовые вещи и вендоры
+// @use 'vendors/bootstrap';
+@use 'base/reset';
+@use 'base/typography';
+
+// components
+@use 'components/moleculs/breadcrumbs';
+@use 'components/moleculs/buttons';
+
+@use 'components/organism/menu';
+@use 'components/organism/footer';
+@use 'components/organism/article-card';
+
+// 3. Каркас (Layout)
+@use 'layout/container';
+@use 'layout/article-header';
+// @use 'layout/header';
+// @use 'layout/footer';
+
+// 4. Компоненты (Components)
+// @use 'components/buttons';
+// @use 'components/card';
+
+// 5. Конкретные страницы
+@use 'pages/articles/first_art';
+@use 'pages/articles/articles';
+@use 'pages/index-main';
+@use 'pages/tests/test1';
+@use 'pages/tests/tests';
