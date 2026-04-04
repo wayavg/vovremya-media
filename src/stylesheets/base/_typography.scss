@@ -2,6 +2,11 @@
 @use '../abstracts/mixins' as *;
 @use '../base/fonts' as *;
 
+::selection {
+    background-color: $color-blue-300; 
+    color: $color-blue-000;             
+}
+
 body {
   font-family: $font-body;
   font-size: 18px;
@@ -133,4 +138,6 @@ a {
     font-stretch: condensed;
     font-size: $fs-large-desk;
     line-height: $lh-article;
+
+    
 }

@@ -23,6 +23,12 @@
 
     span:last-child {
         color: $color-blue-400;
+        white-space: nowrap;     
+        overflow: hidden;        
+        text-overflow: ellipsis; 
+        text-transform: lowercase;
+        
+        max-width: 240px; 
     }
 
     @include media-down('mobile') {

@@ -15,3 +15,11 @@
   }
 }
 
+@mixin grid-paper($color: $color-blue-200-main, $size: 24px) {
+  background-color: #ffffff;
+  background-image: 
+    linear-gradient($color 1px, transparent 1px),
+    linear-gradient(90deg, $color 1px, transparent 1px);
+  background-size: $size $size;
+  background-position: center;
+}
