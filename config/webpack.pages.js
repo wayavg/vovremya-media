@@ -192,5 +192,12 @@ const htmlPages = [
   ])
 ]
 
+// const pages = [ ... ];
+// const htmlPlugins = pages.map(page => new HtmlWebpackPlugin({
+//     template: path.resolve(__dirname, '../src/index.html'), // Общий шаблон
+//     filename: `pages/${page.url}.html`,
+//     // ...
+// }));
+
 module.exports = htmlPages
 

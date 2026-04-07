@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const htmlPages = require('./webpack.pages.js')
+const CopyPlugin = require("copy-webpack-plugin");
 
 const webpack = require('webpack')
 const path = require('path')
@@ -59,7 +60,21 @@ module.exports = {
       }
     ]
   },
-  plugins: [new MiniCssExtractPlugin(), ...htmlPages],
+  plugins: [
+    new MiniCssExtractPlugin(), ...htmlPages,
+    
+    new CopyPlugin({
+      patterns: [
+        { 
+          // Путь от файла webpack.common.js до вашей новой папки с иконками
+          // '../' нужен, чтобы выйти из папки config в корень проекта
+          from: path.resolve(__dirname, "../src/images/favicon_io"), 
+          // Папка 'favicon' создастся внутри dist автоматически
+          to: "favicon" 
+        },
+      ],
+    }),
+  ],
   optimization: {
     minimizer: [new CssMinimizerPlugin()]
   },
