@@ -1,0 +1,11 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/typography' as *;
+
+.sitemap {
+    li a {
+        font-family: $font-title;
+        font-size: $fs-large-desk;
+        text-transform: lowercase;
+    }
+}
