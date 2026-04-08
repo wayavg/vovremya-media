@@ -1,0 +1,33 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.error-404 {
+    padding-top: $space-128;
+    padding-bottom: $space-64;
+    @include grid-auto-fit();
+    @include media-down('tablet') {
+        padding-bottom: $space-48;
+    }
+    @include media-down('tablet') {
+        padding-bottom: $space-0;
+    }
+
+    img, h1 {
+        grid-column: 3/11;
+        width: 100%;
+        text-align: center;
+
+        @include media-down('desktop-sm') {
+            grid-column: 2/9;
+        }
+    }
+
+    p, a {
+        grid-column: 5/9;
+        text-align: center;
+
+        @include media-down('desktop-sm') {
+            grid-column: 3/8;
+        }
+    }
+}

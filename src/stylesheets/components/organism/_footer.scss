@@ -205,3 +205,18 @@
         }
     }
 }
+
+.bg-none {
+    &__top-bg {
+        width: 100%;
+        height: 100px;
+        background-image: url('/src/images/footer/bg.svg');
+        background-repeat:repeat-x ;
+        background-position: bottom;
+        background-size: contain;
+    }
+    background-color: transparent;
+    &__bottom-content {
+        background-color: $color-blue-200-main;
+    }
+}

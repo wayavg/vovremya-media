@@ -186,6 +186,7 @@ const htmlPages = [
   createPages('./src/pages/sitemap.html', './pages/sitemap.html', [
     'index'
   ]),
+  createPages('./src/pages/404.html', './pages/404.html', ['index']),
   
   createPages('./src/pages/tests/test1.html', './pages/tests/test1.html', [
     'index'

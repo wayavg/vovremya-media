@@ -6,6 +6,7 @@
 // @use 'vendors/bootstrap';
 @use 'base/reset';
 @use 'base/typography';
+@use 'base/bg-cage';
 
 // components
 @use 'components/moleculs/breadcrumbs';
@@ -33,3 +34,4 @@
 @use 'pages/tests/test1';
 @use 'pages/tests/tests';
 @use 'pages/sitemap';
+@use 'pages/error-404';
