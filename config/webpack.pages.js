@@ -174,6 +174,36 @@ const htmlPages = [
   createPages('./src/pages/checklists.html', './pages/checklists.html', [
     'index'
   ]),
+
+  //checklists
+  createPages('./src/pages/checklists/the-2-minute-rule.html', './pages/checklists/the-2-minute-rule.html', [
+    'index'
+  ]),
+  createPages('./src/pages/checklists/digital-detox.html', './pages/checklists/digital-detox.html', [
+    'index'
+  ]),
+  createPages('./src/pages/checklists/six-steps-to-simple-student-life.html', './pages/checklists/six-steps-to-simple-student-life.html', [
+    'index'
+  ]),
+  createPages('./src/pages/checklists/exam-prep-plan.html', './pages/checklists/exam-prep-plan.html', [
+    'index'
+  ]),
+  createPages('./src/pages/checklists/fast-note-taking-methods.html', './pages/checklists/fast-note-taking-methods.html', [
+    'index'
+  ]),
+  createPages('./src/pages/checklists/group-project-management.html', './pages/checklists/group-project-management.html', [
+    'index'
+  ]),
+  createPages('./src/pages/checklists/breaking-down-study-projects.html', './pages/checklists/breaking-down-study-projects.html', [
+    'index'
+  ]),
+  createPages('./src/pages/checklists/time-management-emergency.html', './pages/checklists/time-management-emergency.html', [
+    'index'
+  ]),
+  createPages('./src/pages/checklists/emergency-deadline-plan.html', './pages/checklists/emergency-deadline-plan.html', [
+    'index'
+  ]),
+
   createPages('./src/pages/resources.html', './pages/resources.html', [
     'index'
   ]),
