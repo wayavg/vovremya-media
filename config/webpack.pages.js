@@ -214,6 +214,19 @@ const htmlPages = [
   createPages('./src/pages/resources.html', './pages/resources.html', [
     'index'
   ]),
+
+  //resources
+  createPages('./src/pages/resources/books.html', './pages/resources/books.html', [
+    'index'
+  ]),
+  createPages('./src/pages/resources/reels.html', './pages/resources/reels.html', [
+    'index'
+  ]),
+  createPages('./src/pages/resources/movies.html', './pages/resources/movies.html', [
+    'index'
+  ]),
+
+
   createPages('./src/pages/about.html', './pages/about.html', [
     'index'
   ]),
