@@ -169,8 +169,6 @@ const htmlPages = [
     ['index']
   ),
 
-
-  createPages('./src/pages/tests.html', './pages/tests.html', ['index']),
   createPages('./src/pages/checklists.html', './pages/checklists.html', [
     'index'
   ]),
@@ -204,6 +202,15 @@ const htmlPages = [
     'index'
   ]),
 
+  createPages('./src/pages/tests.html', './pages/tests.html', ['index']),
+
+  //tests
+  createPages('./src/pages/tests/deadline-is-it-a-limit-or-expiry.html', './pages/tests/deadline-is-it-a-limit-or-expiry.html', [
+    'index'
+  ]),
+  createPages('./src/pages/tests/what-kind-of-time-vampire-are-you.html', './pages/tests/what-kind-of-time-vampire-are-you.html', ['index']),
+  createPages('./src/pages/alarm-clock-battle-winner-or-victim.html', './pages/alarm-clock-battle-winner-or-victim.html', ['index']),
+
   createPages('./src/pages/resources.html', './pages/resources.html', [
     'index'
   ]),
@@ -218,9 +225,7 @@ const htmlPages = [
   ]),
   createPages('./src/pages/404.html', './pages/404.html', ['index']),
   
-  createPages('./src/pages/tests/test1.html', './pages/tests/test1.html', [
-    'index'
-  ])
+  
 ]
 
 module.exports = htmlPages
