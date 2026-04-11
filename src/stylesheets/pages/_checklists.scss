@@ -1,0 +1,106 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/typography' as *;
+
+.checklist-checkbox {
+
+    display: flex;
+    gap: $space-16;
+
+    &__box {
+        width: 32px;
+        height: 32px;
+        border: $border-main;
+        border-width: 2px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: $space-8;
+    }
+
+    .large-text-bold {
+        padding-top: $space-4;
+    }
+}
+
+.checklist-counter {
+    font-family: $font-title;
+    color: $color-blue-500-main;
+    letter-spacing: -0.06em;
+
+    display: flex;
+    align-items: end;
+
+    position: absolute;
+
+    span:first-child {
+        font-size: 110px;
+    }
+
+    span:nth-child(2), span:last-child {
+        font-size: 40px;
+        padding-bottom: 24px;
+    }
+}
+
+.checklist-grid {
+    position: relative;
+
+    .checklist-counter {
+        grid-column: 1/3;
+    }
+
+    counter-reset: checklist-list;
+
+    ol {
+        grid-column: 3/-1;
+        list-style-type: none;
+
+        @include media-down('tablet') {
+            font-size: 20px;
+            padding-left: 2.2rem;
+        }
+
+        @include media-down('mobile') {
+            padding-left: 0rem;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        li {
+            @extend h2 ;
+
+            display: flex;
+            align-items: baseline;
+            gap: 0px;
+            counter-increment: checklist-list;
+
+            &::before {
+                    content: counter(checklist-list) "."; 
+                    margin-bottom: $space-4; 
+                }
+
+            h2 {
+                margin: 0;
+                display: inline;
+            }
+
+            @include media-down('mobile') {
+                flex-direction: column; 
+                align-items: flex-start; 
+                counter-increment: article-list; 
+            }
+        }
+    }
+
+    section {
+        grid-column: 6/-1;
+
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+}

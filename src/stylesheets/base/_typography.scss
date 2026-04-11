@@ -119,7 +119,7 @@ a {
     }
 }
 
-.large-text {
+.large-text, .large-text-bold {
     font-size: $fs-large-desk;
 
     @include media-down('desktop-sm') {
@@ -129,6 +129,10 @@ a {
     @include media-down('mobile') {
         font-size: $fs-large-mob;
     }
+}
+
+.large-text-bold {
+    font-weight: bold;
 }
 
 .quote-card__text {

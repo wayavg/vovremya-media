@@ -119,4 +119,9 @@ $transition-main: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
 $border-main: (1px solid $color-blue-400);
 
-// $bg-grid-paper: ($color: rgba($color-blue-400, 0.2), $size: 40px);
+$clip-path-bottom: polygon(
+    0% 0%, 100% 0%,
+
+    100% 100%, 96% 98%, 80% 94%, 75% 100%, 68% 96%, 54% 100%, 45% 98%, 
+    40% 100%, 35% 96%, 25% 98%, 12% 96%, 0% 100% 
+  );

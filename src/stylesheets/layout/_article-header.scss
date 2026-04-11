@@ -1,7 +1,7 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 @use '../components/atoms/tags';
-@use '../components/moleculs/breadcrumbs';
+// @use '../components/moleculs/breadcrumbs';
 
 .header-article {
 
@@ -133,5 +133,53 @@
         @include media-down('mobile') {
             flex-direction: row;
         }
+    }
+}
+
+.header-checklist {
+    &__filter {
+        filter: 
+            drop-shadow(0 2px 0 $color-blue-400);
+    }
+    @include grid-paper($size: 16px);
+    
+    padding-top: $space-96;
+    padding-bottom: $space-96;
+    margin-bottom: $space-32;
+    clip-path: $clip-path-bottom;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: $space-64;
+    }
+
+    &__content {
+        @include grid-auto-fit();
+    }
+
+    &__descr {
+        grid-column: 1/9;
+        display: flex;
+        flex-direction: column;
+        gap: $space-16;
+    }
+
+    aside {
+        grid-column: 10/-1;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: space-between;
+    }
+
+    &__social-sites {
+        display: flex;
+        flex-direction: column;
+        gap: $space-16;
+    }
+
+    &__image {
+        width: 100%;
     }
 }

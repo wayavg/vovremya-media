@@ -209,7 +209,7 @@ const htmlPages = [
     'index'
   ]),
   createPages('./src/pages/tests/what-kind-of-time-vampire-are-you.html', './pages/tests/what-kind-of-time-vampire-are-you.html', ['index']),
-  createPages('./src/pages/alarm-clock-battle-winner-or-victim.html', './pages/alarm-clock-battle-winner-or-victim.html', ['index']),
+  createPages('./src/pages/tests/alarm-clock-battle-winner-or-victim.html', './pages/tests/alarm-clock-battle-winner-or-victim.html', ['index']),
 
   createPages('./src/pages/resources.html', './pages/resources.html', [
     'index'
