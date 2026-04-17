@@ -66,41 +66,98 @@ if (burgerBtn) {
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/ 	
-/************************************************************************/
 // This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
 (() => {
 "use strict";
-/* harmony import */ var _burger_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(248);
-/* harmony import */ var _burger_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_burger_js__WEBPACK_IMPORTED_MODULE_0__);
+
+// EXTERNAL MODULE: ./src/javascripts/burger.js
+var burger = __webpack_require__(248);
+;// ./src/javascripts/confetti.js
+function startConfetti(startX, startY) {
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  var pieces = [];
+  var numberOfPieces = 45; // Количество частичек при одном клике
+
+  // Твоя палитра цветов
+  var colors = ["#0B1956", "#003273", "#044B9C", "#3366C1", "#5882E3", "#7CA0FF", "#A2BFFF", "#C8DFFF", "#EAF4FF", "#FFFFFF", "#FFF7E4", "#F8F4EB"];
+  function update() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    pieces.forEach(function (p, i) {
+      // Движение
+      p.yVel += p.gravity; // Гравитация тянет частицу вниз (увеличивает yVel)
+      p.y += p.yVel; // Применяем скорость к координате Y
+      p.x += p.drift;
+
+      // Плавное затухание (частички исчезают со временем)
+      p.opacity -= 0.015;
+      ctx.save();
+      ctx.globalAlpha = p.opacity; // Применяем прозрачность
+      ctx.fillStyle = p.color;
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rotation);
+      ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+      ctx.restore();
+
+      // Удаляем частицу, если она улетела или стала прозрачной
+      if (p.y > canvas.height || p.opacity <= 0 || p.x < -50) {
+        pieces.splice(i, 1);
+      }
+    });
+    if (pieces.length > 0) {
+      requestAnimationFrame(update);
+    }
+  }
+
+  // Создаем взрыв частиц из координат чекбокса
+  for (var i = 0; i < numberOfPieces; i++) {
+    pieces.push({
+      x: startX,
+      y: startY,
+      size: Math.random() * 7 + 4,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      drift: Math.random() * -6 - 2,
+      // Скорость влево (от -2 до -8)
+      yVel: Math.random() * -5 - 5,
+      // Начальный мощный прыжок ВВЕРХ (от -5 до -15)
+      gravity: 0.5,
+      rotation: Math.random() * Math.PI,
+      spin: Math.random() * 0.2,
+      opacity: 1
+    });
+
+    // Придаем начальный импульс "взрыва"
+    pieces[i].y += pieces[i].yVel;
+  }
+  update();
+}
+;// ./src/javascripts/checklist.js
+
+document.addEventListener('DOMContentLoaded', function () {
+  var checkboxes = document.querySelectorAll('.checklist-checkbox__box');
+  var numberDisplay = document.querySelector('.checklist-number');
+  var counter = document.querySelector('.checklist-amount');
+  if (numberDisplay) {
+    numberDisplay.textContent = checkboxes.length;
+  }
+  checkboxes.forEach(function (box) {
+    box.addEventListener('click', function () {
+      box.classList.toggle('active');
+      var amountActive = document.querySelectorAll('.active');
+      counter.textContent = amountActive.length;
+      if (box.classList.contains('active')) {
+        var rect = box.getBoundingClientRect();
+        var centerX = rect.left + rect.width / 2;
+        var centerY = rect.top + rect.height / 2;
+        startConfetti(centerX, centerY);
+      }
+    });
+  });
+});
+;// ./src/javascripts/index.js
+
 
 
 // import './tests/test1.js';
