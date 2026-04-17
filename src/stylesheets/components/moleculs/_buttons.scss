@@ -3,21 +3,19 @@
 
 .secondary-button, .primary-button {
 
-    appearance: none;       // Отключает системные стили браузера
-    background: transparent; // Убирает серый фон
-    border: none;            // Убирает рамку
-    padding: 0;             // Убирает внутренние отступы
-    margin: 0;              // Убирает внешние отступы
+    appearance: none;       
+    background: transparent; 
+    border: none;            
+    padding: 0;             
+    margin: 0;             
     
-    // 2. Настраиваем шрифт
-    font: inherit;          // Наследует шрифт от родителя (иначе будет системный)
-    color: inherit;         // Наследует цвет текста
     
-    // 3. Важные мелочи
-    cursor: pointer;        // Добавляет "палец" при наведении
-    outline: none;          // Убирает синюю обводку (но лучше заменить на свою для доступности)
+    font: inherit;          
+    color: inherit;         
     
-    // 4. Для корректного отображения флексов/размеров
+    cursor: pointer;      
+    outline: none;        
+    
     display: inline-flex;   
     align-items: center;
     justify-content: center;
@@ -25,6 +23,7 @@
     font-family: $font-title;
     font-size: 24px;
     text-transform: lowercase;
+    text-align: center;
     outline: none;
 
     display: inline-block;
@@ -32,15 +31,17 @@
     padding-inline: $space-32;
     align-content: center;
 
-    @include media-down('desktop-sm') {
-        font-size: 20px;
+    @include media-down('desktop-lg') {
+        font-size: 18px;
         height: 40px;
         padding-inline: $space-24;
     }
 
     @include media-down('mobile') {
         font-size: 18px;
-        height: 48px;
+        min-height: 48px;
+        height: auto;
+        padding-block: 10px;
     }
 }
 

@@ -10,9 +10,7 @@ $clip-path-quote: polygon(
   );
 
 .quote-card {
-    filter: 
-        drop-shadow(0 1px 0 $color-blue-400) 
-        drop-shadow(0 -1px 0 $color-blue-400);
+    @include filter-polyline($size-top: 1px, $size-bottom: -1px);
     
     
     &__text {

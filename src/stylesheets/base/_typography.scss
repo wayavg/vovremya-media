@@ -18,14 +18,14 @@ body {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, [class^="title-"] {
   font-family: $font-title;
   text-transform: lowercase;
   line-height: 0.95;
   letter-spacing: -0.06em;
 }
 
-h1 {
+h1, .title-1 {
     font-size: $fs-h1-desk;
 
     @include media-down("desktop-sm") {
@@ -37,7 +37,7 @@ h1 {
     }
 }
 
-h2 {
+h2, .title-2 {
     font-size: $fs-h2-desk;
 
     @include media-down("desktop-sm") {
@@ -49,7 +49,7 @@ h2 {
     }
 }
 
-h3 {
+h3, .title-3 {
     font-size: $fs-h3-desk;
 
     @include media-down("desktop-sm") {
@@ -61,7 +61,7 @@ h3 {
     }
 }
 
-h4 {
+h4, .title-4 {
     font-size: $fs-h4-desk;
 
     @include media-down("desktop-sm") {
@@ -73,7 +73,7 @@ h4 {
     }
 }
 
-h5 {
+h5, .title-5 {
     font-size: $fs-h5-desk;
 
     @include media-down("desktop-sm") {
@@ -85,7 +85,7 @@ h5 {
     }
 }
 
-h6 {
+h6, .title-6 {
     font-size: $fs-h6-desk;
 
     @include media-down("desktop-sm") {

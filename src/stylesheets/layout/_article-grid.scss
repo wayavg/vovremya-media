@@ -12,7 +12,7 @@
         grid-column: 1 / 9;
 
         @include media-down('desktop-sm') {
-            grid-column: 1 / 10;
+            grid-column: 1 / -1;
         }
     }
 
@@ -20,7 +20,7 @@
         grid-column: 6/13;
 
         @include media-down('desktop-sm') {
-            grid-column: 4 / 10;
+            grid-column: 3 / -1;
         }
     }
 
@@ -28,7 +28,7 @@
         grid-column: 6/13;
 
         @include media-down('desktop-sm') {
-            grid-column: 1 / 10;
+            grid-column: 1 / -1;
         }
     }
 
@@ -52,7 +52,7 @@
         }
 
         @include media-down('desktop-sm') {
-            grid-column: 1 / 4;
+            grid-column: 1 / 3;
         }
         
 

@@ -7,11 +7,45 @@
     display: flex;
     gap: $space-16;
 
+    canvas {
+        height: 100vh;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        position: fixed;
+        width: 100%;
+        z-index: 2;
+        display: block;
+    }
+
     &__box {
+        cursor: pointer;
         width: 32px;
         height: 32px;
-        border: $border-main;
+        border: solid $color-blue-500-main;
         border-width: 2px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        &:hover {
+            border-color: $color-blue-900-main;
+        }
+
+        &.active {
+            background-color: $color-blue-500-main;
+
+            svg {
+                display: block;
+                
+            }
+        }
+
+        svg {
+            display: none;
+        }
     }
 
     &__content {
@@ -25,6 +59,12 @@
     }
 }
 
+// .sticky-wrapper {
+//     position: relative;
+//     height: 0;
+//     width: 0;
+// }
+
 .checklist-counter {
     font-family: $font-title;
     color: $color-blue-500-main;
@@ -32,8 +72,9 @@
 
     display: flex;
     align-items: end;
-
-    position: absolute;
+    position: sticky;
+    top: 0px;
+    // height:fit-content;
 
     span:first-child {
         font-size: 110px;

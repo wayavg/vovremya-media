@@ -37,7 +37,7 @@
   }
 
   @include media-down('desktop-sm') {
-      grid-template-columns: repeat(9, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       grid-column-gap: 16px;
       grid-row-gap: 24px;
   }
@@ -46,4 +46,10 @@
       display: flex;
       flex-direction: column;
   }
+}
+
+@mixin filter-polyline($size-top: 2px, $size-bottom: -2px) {
+  filter: 
+    drop-shadow(0 $size-top 0 $color-blue-400) 
+    drop-shadow(0 $size-bottom 0 $color-blue-400);
 }
