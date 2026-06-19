@@ -1,0 +1,19 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.search-content {
+    grid-column: 3/-3;
+    text-align: center;
+    display: flex;
+    gap: 16px;
+    padding-block: 128px;
+}
+
+input {
+    // display:block;
+    height: 48px;
+    width: 100%;
+    background-color: white;
+    padding: 16px 16px;
+    font-size: 24px;
+}

@@ -53,3 +53,11 @@
     drop-shadow(0 $size-top 0 $color-blue-400) 
     drop-shadow(0 $size-bottom 0 $color-blue-400);
 }
+
+@mixin clip-path-block() {
+  clip-path: $clip-path-block;
+
+  @include media-down('desktop-sm') {
+      clip-path: $clip-path-block-mobile;
+  }
+}

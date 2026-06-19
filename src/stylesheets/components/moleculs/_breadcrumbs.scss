@@ -2,37 +2,74 @@
 @use '../../abstracts/mixins' as *;
 
 .breadcrumbs {
-    display: flex;
-    gap: $space-8;
-    a {
-        color: $color-blue-400;
-        text-decoration: none;
 
-        &:visited, &:active {
+    &__list {
+        display: flex;
+        gap: $space-4;
+
+        @include media-down('mobile') {
+            flex-wrap: wrap;
+            row-gap: $space-4;
+        }
+    }
+
+    &__item {
+        text-transform: lowercase;
+        display: flex;
+        gap: $space-4;
+    }
+
+    &__link, &__separator {
+        color: $color-blue-700;
+    }
+
+    &__link {
+        &:hover, &:active {
             color: $color-blue-400;
         }
 
-        &:hover {
-            color: $color-blue-700
-        }
+        transition: color $transition-main;
     }
 
-    span {
-        color: $color-blue-400;
-    }
-
-    span:last-child {
+    &__current {
         color: $color-blue-400;
         white-space: nowrap;     
         overflow: hidden;        
         text-overflow: ellipsis; 
-        text-transform: lowercase;
         
         max-width: 240px; 
     }
+    // display: flex;
+    // gap: $space-8;
+    // a {
+    //     color: $color-blue-400;
+    //     text-decoration: none;
 
-    @include media-down('mobile') {
-        flex-wrap: wrap;
-        row-gap: $space-4;
-    }
+    //     &:visited, &:active {
+    //         color: $color-blue-400;
+    //     }
+
+    //     &:hover {
+    //         color: $color-blue-700
+    //     }
+    // }
+
+    // span {
+    //     color: $color-blue-400;
+    // }
+
+    // span:last-child {
+    //     color: $color-blue-400;
+    //     white-space: nowrap;     
+    //     overflow: hidden;        
+    //     text-overflow: ellipsis; 
+    //     text-transform: lowercase;
+        
+    //     max-width: 240px; 
+    // }
+
+    // @include media-down('mobile') {
+    //     flex-wrap: wrap;
+    //     row-gap: $space-4;
+    // }
 }

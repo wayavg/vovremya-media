@@ -9,234 +9,244 @@ function createPages(template, filename, chunks) {
 }
 
 const htmlPages = [
-  createPages('./src/index.html', './index.html', ['index']),
-  createPages('./src/pages/articles.html', './pages/articles.html', ['index']),
+  createPages('./src/index.html', './index.html', ['index', 'react']),
+  createPages('./src/pages/search.html', './search.html', ['index', 'search', 'searchdata', 'react']),
+
+  createPages('./src/pages/articles.html', './articles.html', ['index', 'react']),
 
 
   //basa-art
   createPages(
     './src/pages/articles/manage-time.html',
-    './pages/articles/manage-time.html',
-    ['index']
+    './articles/manage-time.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/the-2-minute-rule.html',
-    './pages/articles/the-2-minute-rule.html',
-    ['index']
+    './articles/the-2-minute-rule.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/digital-detox.html',
-    './pages/articles/digital-detox.html',
-    ['index']
+    './articles/digital-detox.html',
+    ['index', 'react']
   ), //
   createPages(
     './src/pages/articles/exam-prep-plan.html',
-    './pages/articles/exam-prep-plan.html',
-    ['index']
+    './articles/exam-prep-plan.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/fast-note-taking-methods.html',
-    './pages/articles/fast-note-taking-methods.html',
-    ['index']
+    './articles/fast-note-taking-methods.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/sleep-vs-study.html',
-    './pages/articles/sleep-vs-study.html',
-    ['index']
+    './articles/sleep-vs-study.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/prioritizing-tasks.html',
-    './pages/articles/prioritizing-tasks.html',
-    ['index']
+    './articles/prioritizing-tasks.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/tiktok-distraction-focus.html',
-    './pages/articles/tiktok-distraction-focus.html',
-    ['index']
+    './articles/tiktok-distraction-focus.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/evening-shutdown-ritual.html',
-    './pages/articles/evening-shutdown-ritual.html',
-    ['index']
+    './articles/evening-shutdown-ritual.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/speed-reading-vs-slow.html',
-    './pages/articles/speed-reading-vs-slow.html',
-    ['index']
+    './articles/speed-reading-vs-slow.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/swiss-cheese-technique.html',
-    './pages/articles/swiss-cheese-technique.html',
-    ['index']
+    './articles/swiss-cheese-technique.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/common-time-management-mistakes.html',
-    './pages/articles/common-time-management-mistakes.html',
-    ['index']
+    './articles/common-time-management-mistakes.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/emergency-deadline-plan.html',
-    './pages/articles/emergency-deadline-plan.html',
-    ['index']
+    './articles/emergency-deadline-plan.html',
+    ['index', 'react']
   ),
 
   //main-art
   createPages(
     './src/pages/articles/brian-tracy-method.html',
-    './pages/articles/brian-tracy-method.html',
-    ['index']
+    './articles/brian-tracy-method.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/breaking-down-study-projects.html',
-    './pages/articles/breaking-down-study-projects.html',
-    ['index']
+    './articles/breaking-down-study-projects.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/finding-time-for-hobbies.html',
-    './pages/articles/finding-time-for-hobbies.html',
-    ['index']
+    './articles/finding-time-for-hobbies.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/group-project-management.html',
-    './pages/articles/group-project-management.html',
-    ['index']
+    './articles/group-project-management.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/conscious-idleness.html',
-    './pages/articles/conscious-idleness.html',
-    ['index']
+    './articles/conscious-idleness.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/information-overload-tips.html',
-    './pages/articles/information-overload-tips.html',
-    ['index']
+    './articles/information-overload-tips.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/phone-free-experiment.html',
-    './pages/articles/phone-free-experiment.html',
-    ['index']
+    './articles/phone-free-experiment.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/sport-and-productivity.html',
-    './pages/articles/sport-and-productivity.html',
-    ['index']
+    './articles/sport-and-productivity.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/improvisation-time.html',
-    './pages/articles/improvisation-time.html',
-    ['index']
+    './articles/improvisation-time.html',
+    ['index', 'react']
   ),
 
   //pro-art
   createPages(
     './src/pages/articles/perfectionist-syndrome-deadlines.html',
-    './pages/articles/perfectionist-syndrome-deadlines.html',
-    ['index']
+    './articles/perfectionist-syndrome-deadlines.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/freelance-and-study-tips.html',
-    './pages/articles/freelance-and-study-tips.html',
-    ['index']
+    './articles/freelance-and-study-tips.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/time-tracking-diary.html',
-    './pages/articles/time-tracking-diary.html',
-    ['index']
+    './articles/time-tracking-diary.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/multitasking-myth.html',
-    './pages/articles/multitasking-myth.html',
-    ['index']
+    './articles/multitasking-myth.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/blogging-while-studying.html',
-    './pages/articles/blogging-while-studying.html',
-    ['index']
+    './articles/blogging-while-studying.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/internship-hobby-balance.html',
-    './pages/articles/internship-hobby-balance.html',
-    ['index']
+    './articles/internship-hobby-balance.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/reverse-planning.html',
-    './pages/articles/reverse-planning.html',
-    ['index']
+    './articles/reverse-planning.html',
+    ['index', 'react']
   ),
   createPages(
     './src/pages/articles/creative-chaos-deadlines.html',
-    './pages/articles/creative-chaos-deadlines.html',
-    ['index']
+    './articles/creative-chaos-deadlines.html',
+    ['index', 'react']
   ),
 
-  createPages('./src/pages/checklists.html', './pages/checklists.html', [
-    'index'
-  ]),
+  createPages('./src/pages/checklists.html', './checklists.html', 
+    ['index', 'react']
+  ),
 
   //checklists
-  createPages('./src/pages/checklists/the-2-minute-rule.html', './pages/checklists/the-2-minute-rule.html', [
-    'index'
-  ]),
-  createPages('./src/pages/checklists/digital-detox.html', './pages/checklists/digital-detox.html', [
-    'index'
-  ]),
-  createPages('./src/pages/checklists/six-steps-to-simple-student-life.html', './pages/checklists/six-steps-to-simple-student-life.html', [
-    'index'
-  ]),
-  createPages('./src/pages/checklists/exam-prep-plan.html', './pages/checklists/exam-prep-plan.html', [
-    'index'
-  ]),
-  createPages('./src/pages/checklists/fast-note-taking-methods.html', './pages/checklists/fast-note-taking-methods.html', [
-    'index'
-  ]),
-  createPages('./src/pages/checklists/group-project-management.html', './pages/checklists/group-project-management.html', [
-    'index'
-  ]),
-  createPages('./src/pages/checklists/breaking-down-study-projects.html', './pages/checklists/breaking-down-study-projects.html', [
-    'index'
-  ]),
-  createPages('./src/pages/checklists/time-management-emergency.html', './pages/checklists/time-management-emergency.html', [
-    'index'
-  ]),
-  createPages('./src/pages/checklists/emergency-deadline-plan.html', './pages/checklists/emergency-deadline-plan.html', [
-    'index'
-  ]),
+  createPages('./src/pages/checklists/the-2-minute-rule.html', './checklists/the-2-minute-rule.html', 
+    ['index', 'react']
+  ),
+  createPages('./src/pages/checklists/digital-detox.html', './checklists/digital-detox.html', 
+    ['index', 'react']
+  ),
+  createPages('./src/pages/checklists/six-steps-to-simple-student-life.html', './checklists/six-steps-to-simple-student-life.html', 
+    ['index', 'react']
+  ),
+  createPages('./src/pages/checklists/exam-prep-plan.html', './checklists/exam-prep-plan.html', 
+    ['index', 'react']
+  ),
+  createPages('./src/pages/checklists/fast-note-taking-methods.html', './checklists/fast-note-taking-methods.html', 
+    ['index', 'react']
+  ),
+  createPages('./src/pages/checklists/group-project-management.html', './checklists/group-project-management.html', 
+    ['index', 'react']
+  ),
+  createPages('./src/pages/checklists/breaking-down-study-projects.html', './checklists/breaking-down-study-projects.html', 
+    ['index', 'react']
+  ),
+  createPages('./src/pages/checklists/time-management-emergency.html', './checklists/time-management-emergency.html', 
+    ['index', 'react']
+  ),
+  createPages('./src/pages/checklists/emergency-deadline-plan.html', './checklists/emergency-deadline-plan.html', 
+    ['index', 'react']
+  ),
 
-  createPages('./src/pages/tests.html', './pages/tests.html', ['index']),
+  createPages('./src/pages/tests.html', './tests.html', 
+    ['index', 'react']
+  ),
 
   //tests
-  createPages('./src/pages/tests/deadline-is-it-a-limit-or-expiry.html', './pages/tests/deadline-is-it-a-limit-or-expiry.html', [
-    'index'
-  ]),
-  createPages('./src/pages/tests/what-kind-of-time-vampire-are-you.html', './pages/tests/what-kind-of-time-vampire-are-you.html', ['index']),
-  createPages('./src/pages/tests/alarm-clock-battle-winner-or-victim.html', './pages/tests/alarm-clock-battle-winner-or-victim.html', ['index']),
+  createPages('./src/pages/tests/deadline-is-it-a-limit-or-expiry.html', './tests/deadline-is-it-a-limit-or-expiry.html', 
+    ['index', 'react']
+  ),
+  createPages('./src/pages/tests/what-kind-of-time-vampire-are-you.html', './tests/what-kind-of-time-vampire-are-you.html', 
+    ['index', 'react']
+  ),
+  createPages('./src/pages/tests/alarm-clock-battle-winner-or-victim.html', './tests/alarm-clock-battle-winner-or-victim.html', 
+    ['index', 'react']
+  ),
 
-  createPages('./src/pages/resources.html', './pages/resources.html', [
-    'index'
-  ]),
+  createPages('./src/pages/resources.html', './resources.html', 
+    ['index', 'react']
+  ),
 
   //resources
-  createPages('./src/pages/resources/books.html', './pages/resources/books.html', [
-    'index'
-  ]),
-  createPages('./src/pages/resources/reels.html', './pages/resources/reels.html', [
-    'index'
-  ]),
-  createPages('./src/pages/resources/movies.html', './pages/resources/movies.html', [
-    'index'
-  ]),
+  createPages('./src/pages/resources/books.html', './resources/books.html', 
+    ['index', 'react']
+  ),
+  createPages('./src/pages/resources/reels.html', './resources/reels.html', 
+    ['index', 'react']
+  ),
+  createPages('./src/pages/resources/movies.html', './resources/movies.html', 
+    ['index', 'react']
+  ),
 
 
-  createPages('./src/pages/about.html', './pages/about.html', [
-    'index'
-  ]),
-  createPages('./src/pages/styleguide.html', './pages/styleguide.html', [
-    'index'
-  ]),
-  createPages('./src/pages/sitemap.html', './pages/sitemap.html', [
-    'index'
-  ]),
-  createPages('./src/pages/404.html', './pages/404.html', ['index']),
+  createPages('./src/pages/about.html', './about.html', 
+    ['index', 'react']
+  ),
+  createPages('./src/pages/styleguide.html', './styleguide.html', 
+    ['index', 'react']
+  ),
+  createPages('./src/pages/sitemap.html', './sitemap.html', 
+    ['index', 'react']
+  ),
+  createPages('./src/pages/404.html', './404.html', 
+    ['index', 'react']
+  ),
   
   
 ]

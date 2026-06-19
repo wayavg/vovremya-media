@@ -288,8 +288,14 @@
 
             @include media-down('mobile') {
                     p {
-                        width: 70vw;
+                        width: 60vw;
                         text-align: center;
+                        margin-bottom: 1rem;
+                    }
+                    
+                    img {
+                        height: 70%; 
+                        object-fit: fill; 
                     }
                 }
         }
@@ -300,7 +306,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 1;    // Самый нижний слой
+            z-index: 1; 
             object-fit: contain;
         }
     }
@@ -312,11 +318,15 @@
     @include grid-paper($size: 16px);
     padding-block: $space-128;
 
+    @include media-down('mobile') {
+        padding-block: $space-80;
+    }
+
     &__filter {
         @include filter-polyline();
     }
 
-    clip-path: $clip-path-block;
+    @include clip-path-block()
 }
 
 .checklists-index {
@@ -518,7 +528,8 @@
     }
 
     &__container {
-        padding-block: $space-48;
+        padding-top: $space-64;
+        padding-bottom: $space-24;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 1fr;
@@ -528,6 +539,10 @@
         @include media-down('tablet') {
             display: flex;
             flex-direction: column;
+        }
+
+        @include media-down('mobile') {
+            padding-bottom: $space-0;
         }
     }
 }
