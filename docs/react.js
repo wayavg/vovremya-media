@@ -20457,25 +20457,7 @@ if (true) {
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		var scriptUrl;
-/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
-/******/ 		var document = __webpack_require__.g.document;
-/******/ 		if (!scriptUrl && document) {
-/******/ 			if (document.currentScript && document.currentScript.tagName.toUpperCase() === 'SCRIPT')
-/******/ 				scriptUrl = document.currentScript.src;
-/******/ 			if (!scriptUrl) {
-/******/ 				var scripts = document.getElementsByTagName("script");
-/******/ 				if(scripts.length) {
-/******/ 					var i = scripts.length - 1;
-/******/ 					while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
-/******/ 				}
-/******/ 			}
-/******/ 		}
-/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
-/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
-/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
-/******/ 		scriptUrl = scriptUrl.replace(/^blob:/, "").replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
-/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 		__webpack_require__.p = "./";
 /******/ 	})();
 /******/ 	
 /************************************************************************/
@@ -21144,7 +21126,7 @@ function O_Menu(_ref) {
     className: "menu-header__logo-content"
   }, /*#__PURE__*/react.createElement("a", {
     className: "menu-header__logo",
-    href: "/"
+    href: "./index.html"
   }, /*#__PURE__*/react.createElement("img", {
     src: _1_namespaceObject,
     alt: "\u0432\u043E\u0432\u0440\u0435\u043C\u044F"
@@ -24832,43 +24814,46 @@ function P_Styleguide(_ref) {
 
 
 
+var bp = function bp(path) {
+  return basePath + path;
+};
 var headerLinks = [{
   title: 'Статьи',
-  link: '/articles.html'
+  link: bp('/articles.html')
 }, {
   title: 'Тесты',
-  link: '/tests.html'
+  link: bp('/tests.html')
 }, {
   title: 'Чек-листы',
-  link: '/checklists.html'
+  link: bp('/checklists.html')
 }, {
   title: 'Книги',
-  link: '/resources/books.html'
+  link: bp('/resources/books.html')
 }, {
   title: 'Фильмы',
-  link: '/resources/movies.html'
+  link: bp('/resources/movies.html')
 }, {
   title: 'Блогеры',
-  link: '/resources/reels.html'
+  link: bp('/resources/reels.html')
 }];
 var footerLinks = [{
   title: 'Статьи',
-  link: '/articles.html'
+  link: bp('/articles.html')
 }, {
   title: 'Тесты',
-  link: '/tests.html'
+  link: bp('/tests.html')
 }, {
   title: 'Чек-листы',
-  link: '/checklists.html'
+  link: bp('/checklists.html')
 }, {
   title: 'Ресурсы',
-  link: '/resources.html'
+  link: bp('/resources.html')
 }, {
   title: 'О сервисе',
-  link: '/about.html'
+  link: bp('/about.html')
 }, {
   title: 'Стайлгайд',
-  link: '/styleguide.html'
+  link: bp('/styleguide.html')
 }];
 var socialLinks = [{
   'title': 'Telegram',
@@ -24917,8 +24902,12 @@ var routes = {
   '/checklists/six-steps-to-simple-student-life.html': P_ChecklistSixSteps,
   '/styleguide.html': P_Styleguide
 };
+var basePath = '/vovremya-media';
 var App = function App() {
   var pathname = window.location.pathname;
+  if (pathname.startsWith(basePath)) {
+    pathname = pathname.slice(basePath.length) || '/';
+  }
   console.log("Текущий pathname в браузере:", pathname);
   var PageCompoment = routes[pathname] || P_Error404;
   if (pathname.startsWith('/articles/') && pathname.endsWith('.html')) {

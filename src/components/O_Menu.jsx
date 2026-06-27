@@ -43,7 +43,7 @@ export default function O_Menu({ headerLinks = [] }) {
             <header className="menu-header">
                 <div className="menu-header__container">
                     <div className="menu-header__logo-content">
-                        <a className="menu-header__logo" href="/">
+                        <a className="menu-header__logo" href="./index.html">
                             <img src={vovremyaLogo} alt="вовремя" />
                         </a>
                     </div>

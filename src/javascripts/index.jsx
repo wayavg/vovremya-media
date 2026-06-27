@@ -4,22 +4,24 @@ import { createRoot } from "react-dom/client";
 import tgIcon from '../images/icons/social/tg-social.svg';
 import vkIcon from '../images/icons/social/vk-social.svg';
 
+const bp = (path) => basePath + path;
+
 const headerLinks = [
-    { title: 'Статьи', link: '/articles.html' },
-    { title: 'Тесты', link: '/tests.html' },
-    { title: 'Чек-листы', link: '/checklists.html' },
-    { title: 'Книги', link: '/resources/books.html' },
-    { title: 'Фильмы', link: '/resources/movies.html' },
-    { title: 'Блогеры', link: '/resources/reels.html' },
+    { title: 'Статьи', link: bp('/articles.html') },
+    { title: 'Тесты', link: bp('/tests.html') },
+    { title: 'Чек-листы', link: bp('/checklists.html') },
+    { title: 'Книги', link: bp('/resources/books.html') },
+    { title: 'Фильмы', link: bp('/resources/movies.html') },
+    { title: 'Блогеры', link: bp('/resources/reels.html') },
 ]
 
 const footerLinks = [
-    { title: 'Статьи', link: '/articles.html' },
-    { title: 'Тесты', link: '/tests.html' },
-    { title: 'Чек-листы', link: '/checklists.html' },
-    { title: 'Ресурсы', link: '/resources.html' },
-    { title: 'О сервисе', link: '/about.html' },
-    { title: 'Стайлгайд', link: '/styleguide.html' },
+    { title: 'Статьи', link: bp('/articles.html') },
+    { title: 'Тесты', link: bp('/tests.html') },
+    { title: 'Чек-листы', link: bp('/checklists.html') },
+    { title: 'Ресурсы', link: bp('/resources.html') },
+    { title: 'О сервисе', link: bp('/about.html') },
+    { title: 'Стайлгайд', link: bp('/styleguide.html') },
 ]
 
 const socialLinks = [
@@ -75,8 +77,14 @@ const routes = {
     '/styleguide.html': P_Styleguide,
 }
 
+const basePath = '/vovremya-media';
+
 const App = () => {
-    const {pathname} = window.location;
+    let {pathname} = window.location;
+
+    if (pathname.startsWith(basePath)) {
+        pathname = pathname.slice(basePath.length) || '/';
+    }
 
     console.log("Текущий pathname в браузере:", pathname);
 
