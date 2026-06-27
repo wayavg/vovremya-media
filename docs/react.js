@@ -21126,7 +21126,7 @@ function O_Menu(_ref) {
     className: "menu-header__logo-content"
   }, /*#__PURE__*/react.createElement("a", {
     className: "menu-header__logo",
-    href: "./index.html"
+    href: "/vovremya-media/index.html"
   }, /*#__PURE__*/react.createElement("img", {
     src: _1_namespaceObject,
     alt: "\u0432\u043E\u0432\u0440\u0435\u043C\u044F"
