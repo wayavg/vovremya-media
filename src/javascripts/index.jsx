@@ -4,6 +4,7 @@ import { createRoot } from "react-dom/client";
 import tgIcon from '../images/icons/social/tg-social.svg';
 import vkIcon from '../images/icons/social/vk-social.svg';
 
+const basePath = '/vovremya-media';
 const bp = (path) => basePath + path;
 
 const headerLinks = [
@@ -76,8 +77,6 @@ const routes = {
     '/checklists/six-steps-to-simple-student-life.html': P_ChecklistSixSteps,
     '/styleguide.html': P_Styleguide,
 }
-
-const basePath = '/vovremya-media';
 
 const App = () => {
     let {pathname} = window.location;

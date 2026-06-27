@@ -24814,6 +24814,7 @@ function P_Styleguide(_ref) {
 
 
 
+var basePath = '/vovremya-media';
 var bp = function bp(path) {
   return basePath + path;
 };
@@ -24902,7 +24903,6 @@ var routes = {
   '/checklists/six-steps-to-simple-student-life.html': P_ChecklistSixSteps,
   '/styleguide.html': P_Styleguide
 };
-var basePath = '/vovremya-media';
 var App = function App() {
   var pathname = window.location.pathname;
   if (pathname.startsWith(basePath)) {
