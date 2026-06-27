@@ -1,0 +1,31 @@
+<svg width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="53" height="53" fill="#F5F5F5"/>
+<g id="Organisms/Films">
+<rect x="-739.5" y="-401.5" width="3285" height="4115" rx="4.5" stroke="#8A38F5" stroke-dasharray="10 5"/>
+<g id="Display=Desktop, State=Big">
+<g id="Content">
+<g id="Icon">
+<g id="Mask group">
+<mask id="mask0_1_750" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="53" height="53">
+<g id="Group">
+<path id="Vector" d="M26.5 53C41.1355 53 53 41.1355 53 26.5C53 11.8645 41.1355 0 26.5 0C11.8645 0 0 11.8645 0 26.5C0 41.1355 11.8645 53 26.5 53Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask0_1_750)">
+<g id="Group_2">
+<path id="Vector_2" d="M26.5 53C41.1355 53 53 41.1355 53 26.5C53 11.8645 41.1355 0 26.5 0C11.8645 0 0 11.8645 0 26.5C0 41.1355 11.8645 53 26.5 53Z" fill="black"/>
+<path id="Vector_3" d="M52.9999 7.9502L25.6625 22.583L39.9089 7.9502H32.0119L22.3129 21.4127V7.9502H15.8999V45.0502H22.3129V31.6094L32.0119 45.0502H39.9089L26.0325 30.8775L52.9999 45.0502V38.1602L28.4037 28.2927L52.9999 29.9452V23.0552L28.5595 24.6441L52.9999 14.8402V7.9502Z" fill="url(#paint0_radial_1_750)"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<radialGradient id="paint0_radial_1_750" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(15.8996 7.95084) rotate(45) scale(52.4673)">
+<stop offset="0.5" stop-color="#FF5500"/>
+<stop offset="1" stop-color="#BBFF00"/>
+</radialGradient>
+</defs>
+</svg>

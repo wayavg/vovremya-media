@@ -1,0 +1,134 @@
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/mixins' as *;
+
+.achieve-card {
+  display: flex;
+  flex-direction: column;
+  gap: $space-32;
+  margin-block: 128px 64px;
+
+  @include media-down('mobile') {
+    gap: $space-24;
+    margin-block: 48px 40px;
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $space-32 0;
+    background-color: $color-blue-300;
+  }
+
+  &__status-title {
+    font-family: $font-title;
+    font-size: $fs-h1-desk;
+    line-height: 0.95;
+    text-transform: lowercase;
+    letter-spacing: -0.06em;
+    color: $color-blue-900-main;
+
+    @include media-down('desktop-sm') {
+      font-size: $fs-h1-tab;
+    }
+
+    @include media-down('mobile') {
+      font-size: $fs-h1-mob;
+      text-align: center;
+    }
+  }
+
+  &__level {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media-down('mobile') {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $space-24;
+    }
+  }
+
+  &__image {
+    width: 36%;
+    overflow: hidden;
+
+    @include media-down('tablet') {
+      width: 40%;
+    }
+
+    @include media-down('mobile') {
+      width: 94%;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: $space-24;
+    width: 58%;
+
+    @include media-down('mobile') {
+      width: 100%;
+    }
+  }
+
+  &__label-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    font-family: $font-body;
+    font-size: $fs-large-desk;
+    font-weight: 600;
+    line-height: $lh-article;
+    letter-spacing: 0.02em;
+    color: $color-blue-500-main;
+
+    @include media-down('mobile') {
+      font-size: $fs-large-mob;
+    }
+  }
+
+  &__level-name {
+    font-family: $font-title;
+    font-size: $fs-h1-desk;
+    line-height: 0.95;
+    text-transform: lowercase;
+    letter-spacing: -0.06em;
+    color: $color-blue-900-main;
+
+    @include media-down('desktop-sm') {
+      font-size: $fs-h1-tab;
+    }
+
+    @include media-down('mobile') {
+      font-size: $fs-h1-mob;
+    }
+  }
+
+  &__description {
+    font-family: $font-title;
+    font-size: $fs-h4-desk;
+    line-height: 0.95;
+    text-transform: lowercase;
+    letter-spacing: -0.04em;
+    color: $color-blue-500-main;
+
+    @include media-down('desktop-sm') {
+      font-size: $fs-h4-tab;
+    }
+
+    @include media-down('mobile') {
+      font-size: $fs-h4-mob;
+    }
+  }
+}

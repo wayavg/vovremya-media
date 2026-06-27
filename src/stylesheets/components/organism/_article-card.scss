@@ -134,9 +134,13 @@
     flex-direction: column;
     width: 100%;
     z-index: 1;
-    
+
     @include media-down('desktop-sm') {
         grid-column: span 3;
+    }
+
+    @include media-down('mobile') {
+        grid-column: 1 / -1;
     }
 
 

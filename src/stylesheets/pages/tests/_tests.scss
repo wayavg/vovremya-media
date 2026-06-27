@@ -6,7 +6,7 @@
 }
 
 .tests {
-    padding-top: $space-96;
+    padding-block: $space-96;
 
     &__header {
         grid-column: 1/-1;
@@ -14,8 +14,10 @@
 }
 
 .tests-cards {
-    margin-block: 2rem;
-    grid-column: 1 / -1;
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .test-card {
@@ -23,6 +25,7 @@
     display: flex;
     flex-direction: column;
     border: 1px solid $color-blue-500-main;
+    width: 100%;
 
     &__image {
         img {
@@ -35,11 +38,6 @@
         }
     }
 
-    @include media-down('tablet') {
-            padding: 1rem;
-            gap: 1rem;
-        }
-
     &__content {
         display: flex;
         flex-direction: column;
@@ -48,16 +46,23 @@
 
         p.large-text {
             max-width: calc(100% * 8 / 12);
-            @include media-down('tablet') {
+            @include media-down('desktop-lg') {
                 max-width: 100%;
             }
         }
 
         gap: $space-24;
 
+        @include media-down('desktop-lg') {
+                gap: $space-16;
+            }
+
         @include media-down('tablet') {
-                padding: 1rem;
-                gap: 1rem;
+                padding: $space-24;
+            }
+
+        @include media-down('mobile') {
+                padding: $space-16;
             }
         }
 }

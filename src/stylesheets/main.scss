@@ -15,6 +15,11 @@
 @use 'components/organism/menu';
 @use 'components/organism/footer';
 @use 'components/organism/article-card';
+@use 'components/organism/checklist-card';
+@use 'components/organism/achieve-card';
+@use 'components/organism/book-card';
+@use 'components/organism/movie-card';
+@use 'components/organism/reel-card';
 
 // 3. Каркас (Layout)
 @use 'layout/container';
@@ -36,4 +41,7 @@
 @use 'pages/sitemap';
 @use 'pages/error-404';
 @use 'pages/checklists';
+@use 'pages/checklists-page';
 @use 'pages/search';
+@use 'pages/about';
+@use 'pages/styleguide';

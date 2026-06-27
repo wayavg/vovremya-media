@@ -1,0 +1,110 @@
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/mixins' as *;
+@use '../../base/typography' as *;
+
+.checklist-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0%;
+    min-width: 0;
+    width: 100%;
+    z-index: 1;
+
+    &__link {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        gap: $space-16;
+        background-color: $color-blue-000;
+        transition: background-color $transition-main;
+
+        .checklist-card:hover & {
+            background-color: $color-blue-100;
+        }
+    }
+
+    &__img {
+        aspect-ratio: 552 / 310;
+        border: 1px solid $color-blue-500-main;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-inline: $space-16;
+    }
+
+    &__title {
+        @extend h5;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        transition: color $transition-main;
+
+        .checklist-card:hover & {
+            color: $color-blue-600;
+        }
+    }
+
+    &__points {
+        color: $color-blue-500-main;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    &__border {
+        background-color: $color-blue-000;
+        border-color: $color-blue-500-main;
+        border-inline-width: 2px;
+        border-bottom-width: 2px;
+        border-style: solid;
+        height: 40px;
+        transform: translateY(-16px);
+        position: relative;
+        z-index: -1;
+        transition: transform $transition-main, background-color $transition-main;
+
+        .checklist-card:hover & {
+            transform: translateY(0);
+            background-color: $color-blue-100;
+        }
+    }
+
+    // Medium card
+    &--medium {
+        flex: 2 1 0%;
+
+        .checklist-card__img {
+            aspect-ratio: 937 / 256;
+        }
+    }
+
+    // Large card
+    &--large {
+        flex: 1 1 100%;
+
+        .checklist-card__img {
+            aspect-ratio: 1419 / 613;
+        }
+
+        .checklist-card__footer {
+            padding-inline: $space-24;
+        }
+    }
+}

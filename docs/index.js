@@ -1,7 +1,7 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 248:
+/***/ 5248:
 /***/ (() => {
 
 // const burgerWrap = document.querySelector('.menu-header__burger');
@@ -71,7 +71,7 @@ if (burgerBtn) {
 "use strict";
 
 // EXTERNAL MODULE: ./src/javascripts/burger.js
-var burger = __webpack_require__(248);
+var burger = __webpack_require__(5248);
 ;// ./src/javascripts/confetti.js
 function startConfetti(startX, startY) {
   var canvas = document.getElementById("canvas");
@@ -161,8 +161,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // import './tests/test1.js';
-
-console.log('hey');
 })();
 
 /******/ })()

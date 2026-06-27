@@ -7,7 +7,7 @@ Airtable.configure({
     apiKey: token
 });
 
-let base = Airtable.base('patbHUK8wXXwfzf3J');
+let base = Airtable.base('appzXjfovKKA9DEfm');
 
 function getFormatDate (date = '0000-00-00') {
 
@@ -16,29 +16,24 @@ function getFormatDate (date = '0000-00-00') {
     return `${day}/${month}/${year}`
 }
 
-function getData(list) {
-    return new Promise((resolve, reject) => {
-        const content = [];
-        base(list)
-            .select({maxRecords: 100})
-            .firstPage().then((records) => {
-                records.forEach((item) => {
-                    content.push({
-                        id: item.id,
-                        title: item.fields['Name'],
-                        tags: item.fields['Tags'],
-                        type: item.fields['Type content'],
-                        image: item.fields['Image'],
-                        date: item.fields['Date'],
-                        daterus: getFormatDate(item.fields['Date']),
-                        link: item.fields['Link'],
-                        description: item.fields['Description']
-                    })
-                })
+export const getData = async (tableName, sort = null) => {
+  try {
+    const selectOptions = {};
 
-                resolve(content);
-            })
-    })
-}
+    if (sort) {
+      selectOptions.sort = sort;
+    } else if (tableName === 'Articles') {
+      selectOptions.sort = [{ field: 'Date', direction: 'asc' }];
+    }
 
-export {getData}
+    const records = await base(tableName).select(selectOptions).all();
+    
+    return records.map(record => ({
+      id: record.id,
+      ...record.fields
+    }));
+  } catch (error) {
+    console.error(`Ошибка при получении листа "${tableName}":`, error);
+    return [];
+  }
+};

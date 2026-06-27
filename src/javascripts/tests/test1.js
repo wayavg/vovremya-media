@@ -134,7 +134,12 @@ function publicQuestion() {
     questionNow['answers'].forEach((answerItem, answerIndex) => {
         const answerDiv = document.createElement('div');
         answerDiv.className = 'test-answer';
-        answerDiv.innerText = answerItem.answer;
+        const selector = document.createElement('span');
+        selector.className = 'test-answer__selector';
+        const text = document.createElement('span');
+        text.className = 'test-answer__text';
+        text.innerText = answerItem.answer;
+        answerDiv.append(selector, text);
         textAnswers.append(answerDiv);
 
         //Проверка на то, что вопрос был ранее пройден

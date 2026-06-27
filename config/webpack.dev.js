@@ -6,7 +6,9 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    static: './dev_build'
+    static: './dev_build',
+    port: process.env.PORT || 8080,
+    historyApiFallback: false,
   },
   output: {
     path: path.resolve('.', 'dev_build'),

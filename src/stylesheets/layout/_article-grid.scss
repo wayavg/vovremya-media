@@ -16,7 +16,7 @@
         }
     }
 
-    .paragraph {
+    p, .paragraph {
         grid-column: 6/13;
 
         @include media-down('desktop-sm') {
@@ -24,7 +24,7 @@
         }
     }
 
-    blockquote {
+    blockquote, .quote-card {
         grid-column: 6/13;
 
         @include media-down('desktop-sm') {
@@ -33,8 +33,10 @@
     }
 
     counter-reset: article-list;
+    &.article-content ol,
     ol {
         grid-column: 1/5;
+        padding-left: 0;
 
         @extend h4 ;
 

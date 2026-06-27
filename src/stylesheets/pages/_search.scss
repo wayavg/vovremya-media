@@ -1,19 +1,171 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
-.search-content {
-    grid-column: 3/-3;
-    text-align: center;
-    display: flex;
-    gap: 16px;
-    padding-block: 128px;
+// --- A_SearchInput ---
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-family: $font-body;
+    background: transparent;
+    color: $color-blue-900-main;
+    height: auto;
+    padding: 0;
+
+    &::placeholder {
+        color: $color-blue-400;
+    }
 }
 
-input {
-    // display:block;
+// --- M_SearchBar ---
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin-left: $space-16;
+    gap: $space-8;
     height: 48px;
+    background-color: $color-blue-000;
+    border: $border-main;
+    padding-inline: $space-16;
+
+    @include media-down('tablet') {
+        height: 40px;
+        margin-left: $space-8;
+    }
+
+    @include media-down('mobile') {
+        margin-left: $space-8;
+    }
+
+    &__icon {
+        flex-shrink: 0;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &__close {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        color: $color-blue-900-main;
+        padding: 4px;
+        flex-shrink: 0;
+    }
+}
+
+// --- T_SearchOverlay ---
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    background-color: white;
-    padding: 16px 16px;
-    font-size: 24px;
+    height: 100%;
+    z-index: 998;
+    background-color: rgba($color-blue-200-main, 0.85);
+    padding-top: 64px;
+    overflow-y: auto;
+
+    @include media-down('tablet') {
+        padding-top: 56px;
+    }
+}
+
+.search-results {
+    max-width: 1800px;
+    margin-inline: auto;
+    padding: $space-16 128px $space-64;
+
+    @include media-down('desktop-lg') {
+        padding-inline: 64px;
+    }
+
+    @include media-down('tablet') {
+        padding-inline: 40px;
+    }
+
+    @include media-down('mobile') {
+        padding-inline: 16px;
+    }
+
+    &__summary {
+        font-size: $fs-medium-desk;
+        color: $color-blue-900-main;
+        margin-bottom: $space-32;
+        text-align: center;
+
+        span {
+            font-weight: bold;
+        }
+
+        @include media-down('tablet') {
+            font-size: $fs-medium-tab;
+        }
+    }
+
+    &__empty {
+        font-size: $fs-large-desk;
+        text-align: center;
+        color: $color-blue-600;
+        padding: $space-64 0;
+    }
+}
+
+.search-section {
+    margin-bottom: $space-48;
+
+    &__title {
+        margin-bottom: $space-24;
+    }
+
+    &__cards {
+        display: flex;
+        gap: $space-24;
+        flex-wrap: wrap;
+
+        @include media-down('desktop-sm') {
+            gap: $space-16;
+        }
+
+        @include media-down('mobile') {
+            flex-direction: column;
+        }
+
+        // Article cards in search: 3 per row
+        .article-card-medium {
+            flex: 1 1 280px;
+            max-width: calc(33.333% - 16px);
+
+            @include media-down('desktop-sm') {
+                max-width: calc(50% - 8px);
+            }
+
+            @include media-down('mobile') {
+                max-width: 100%;
+            }
+        }
+
+        // Test cards: full width
+        &--tests {
+            flex-direction: column;
+
+            .test-card {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.search-results__grid .checklist-card {
+    flex: 1 1 280px;
+    max-width: calc(50% - 12px);
+
+    @include media-down('mobile') {
+        max-width: 100%;
+    }
 }
