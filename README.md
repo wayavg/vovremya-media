@@ -1,3 +1,3 @@
 онлайн медиа
 
-https://wayavg.github.io/vovremya-media/index.html
+https://wayavg.github.io/vovremya-media/
