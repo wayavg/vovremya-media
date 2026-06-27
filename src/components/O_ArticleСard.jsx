@@ -22,7 +22,7 @@ export default function O_ArticleСard({ articleData, cardClass }) {
 
   return (
     <article className={cardClass}>
-      <a href={`/articles/${articleData.URL}`} className="article-card-medium__link">
+      <a href={`/vovremya-media/articles/${articleData.URL}`} className="article-card-medium__link">
         <div className={`${cardClass}__container`}>
           
           <div className={`${cardClass}__img`}>

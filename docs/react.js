@@ -20577,7 +20577,7 @@ function O_Footer(_ref) {
   }, "\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\u0441\u043A\u043E\u0435 \u0441\u043E\u0433\u043B\u0430\u0448\u0435\u043D\u0438\u0435"), /*#__PURE__*/react.createElement("a", {
     href: "#"
   }, "\u041F\u043E\u043B\u0438\u0442\u0438\u043A\u0430 \u043A\u043E\u043D\u0444\u0438\u0434\u0435\u043D\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u0438"), /*#__PURE__*/react.createElement("a", {
-    href: "/sitemap"
+    href: "/vovremya-media/sitemap.html"
   }, "\u043A\u0430\u0440\u0442\u0430 \u043C\u0435\u0434\u0438\u0430"))))));
 }
 ;// ./src/components/P_Error404.jsx
@@ -20760,7 +20760,7 @@ function O_ArticleСard(_ref) {
   return /*#__PURE__*/react.createElement("article", {
     className: cardClass
   }, /*#__PURE__*/react.createElement("a", {
-    href: "/articles/".concat(articleData.URL),
+    href: "/vovremya-media/articles/".concat(articleData.URL),
     className: "article-card-medium__link"
   }, /*#__PURE__*/react.createElement("div", {
     className: "".concat(cardClass, "__container")
@@ -20873,7 +20873,7 @@ function O_ChecklistCard(_ref) {
   return /*#__PURE__*/react.createElement("article", {
     className: "checklist-card".concat(sizeClass)
   }, /*#__PURE__*/react.createElement("a", {
-    href: "/checklists/".concat(checklistData.url),
+    href: "/vovremya-media/checklists/".concat(checklistData.url),
     className: "checklist-card__link"
   }, /*#__PURE__*/react.createElement("div", {
     className: "checklist-card__container"
@@ -21336,7 +21336,7 @@ function T_IndexChecklists() {
     className: "checklists-index__cards-checklist"
   }, checklists.map(function (item, index) {
     return /*#__PURE__*/react.createElement("a", {
-      href: "/checklists/".concat(item.url),
+      href: "/vovremya-media/checklists/".concat(item.url),
       key: item.id,
       className: "checklists-index__card-checklist"
     }, /*#__PURE__*/react.createElement("div", {
@@ -21637,7 +21637,7 @@ function M_Breadcrumbs(_ref) {
   }, /*#__PURE__*/react.createElement("li", {
     className: "breadcrumbs__item"
   }, /*#__PURE__*/react.createElement("a", {
-    href: "/index.html",
+    href: "/vovremya-media/index.html",
     className: "breadcrumbs__link"
   }, "\u0433\u043B\u0430\u0432\u043D\u0430\u044F")), items.map(function (item, i) {
     var isLast = i === items.length - 1;
@@ -22040,6 +22040,10 @@ function P_Article(_ref) {
     setLoading = _useState4[1];
   (0,react.useEffect)(function () {
     var pathname = window.location.pathname;
+    var basePath = '/vovremya-media';
+    if (pathname.startsWith(basePath)) {
+      pathname = pathname.slice(basePath.length);
+    }
     var currentSlug = pathname.replace('/articles/', '').replace('.html', '');
     getData('article').then(function (data) {
       var found = data.find(function (item) {
@@ -23525,6 +23529,10 @@ function P_Test(_ref) {
     isFinished = _useState2[0],
     setIsFinished = _useState2[1];
   var pathname = window.location.pathname;
+  var basePath = '/vovremya-media';
+  if (pathname.startsWith(basePath)) {
+    pathname = pathname.slice(basePath.length);
+  }
   var config = testConfigs[pathname];
   if (!config) return /*#__PURE__*/react.createElement("p", null, "\u0422\u0435\u0441\u0442 \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D");
   var breadcrumbsData = [{
@@ -24535,7 +24543,7 @@ function P_Styleguide(_ref) {
   }, /*#__PURE__*/react.createElement("aside", {
     className: "sg-sidebar"
   }, /*#__PURE__*/react.createElement("a", {
-    href: "/",
+    href: "/vovremya-media/index.html",
     className: "sg-sidebar__logo"
   }, "\u0432\u043E\u0432\u0440\u0435\u043C\u044F"), /*#__PURE__*/react.createElement("nav", {
     className: "sg-sidebar__nav"

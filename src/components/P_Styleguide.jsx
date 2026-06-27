@@ -125,7 +125,7 @@ export default function P_Styleguide({ headerLinks, footerLinks, socialLinks }) 
             {/* Layout: sidebar + content */}
             <div className="sg-body">
                 <aside className="sg-sidebar">
-                    <a href="/" className="sg-sidebar__logo">вовремя</a>
+                    <a href="/vovremya-media/index.html" className="sg-sidebar__logo">вовремя</a>
                     <nav className="sg-sidebar__nav">
                         {navItems.map(s => (
                             <a

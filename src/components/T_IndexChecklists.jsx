@@ -37,7 +37,7 @@ export default function T_IndexChecklists() {
 
                         <section className="checklists-index__cards-checklist">
                             {checklists.map((item, index) => (
-                                <a href={`/checklists/${item.url}`} key={item.id} className="checklists-index__card-checklist">
+                                <a href={`/vovremya-media/checklists/${item.url}`} key={item.id} className="checklists-index__card-checklist">
                                     <div className="checklists-index__card-checklist__card-content">
                                         <img src={icons[index % icons.length]} className="checklist-icon" alt="" />
                                         <div className="checklist-title">

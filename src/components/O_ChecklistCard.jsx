@@ -13,7 +13,7 @@ export default function O_ChecklistCard({ checklistData, size = "small" }) {
 
     return (
         <article className={`checklist-card${sizeClass}`}>
-            <a href={`/checklists/${checklistData.url}`} className="checklist-card__link">
+            <a href={`/vovremya-media/checklists/${checklistData.url}`} className="checklist-card__link">
                 <div className="checklist-card__container">
                     <div className="checklist-card__img">
                         <img src={imageSrc} alt={checklistData.Name || 'Иллюстрация чек-листа'} />

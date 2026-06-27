@@ -9,7 +9,7 @@ export default function M_Breadcrumbs({ items = [] }) {
     <nav className="breadcrumbs" aria-label="Хлебные крошки">
       <ol className="breadcrumbs__list">
         <li className="breadcrumbs__item">
-          <a href="/index.html" className="breadcrumbs__link">главная</a>
+          <a href="/vovremya-media/index.html" className="breadcrumbs__link">главная</a>
         </li>
         
         {items.map((item, i) => {

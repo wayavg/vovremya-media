@@ -29,7 +29,11 @@ export default function P_Article({ headerLinks, footerLinks, socialLinks }) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const pathname = window.location.pathname;
+        let pathname = window.location.pathname;
+        const basePath = '/vovremya-media';
+        if (pathname.startsWith(basePath)) {
+            pathname = pathname.slice(basePath.length);
+        }
         const currentSlug = pathname.replace('/articles/', '').replace('.html', '');
 
         getData('article').then((data) => {

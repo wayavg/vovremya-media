@@ -80,7 +80,7 @@ export default function O_Footer ({
             <div className="footer__agree content">
               <a href="#">Пользовательское соглашение</a>
               <a href="#">Политика конфиденциальности</a>
-              <a href="/sitemap">карта медиа</a>
+              <a href="/vovremya-media/sitemap.html">карта медиа</a>
             </div>
           </div>
         </div>

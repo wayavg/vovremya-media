@@ -28,7 +28,11 @@ const testConfigs = {
 
 export default function P_Test({ headerLinks, footerLinks, socialLinks }) {
   const [isFinished, setIsFinished] = useState(false);
-  const { pathname } = window.location;
+  let { pathname } = window.location;
+  const basePath = '/vovremya-media';
+  if (pathname.startsWith(basePath)) {
+    pathname = pathname.slice(basePath.length);
+  }
   const config = testConfigs[pathname];
 
   if (!config) return <p>Тест не найден</p>;
